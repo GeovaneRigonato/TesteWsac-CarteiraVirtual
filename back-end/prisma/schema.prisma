@@ -1,0 +1,26 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define the model for financial movements
+model Movement {
+  id          Int        @id @default(autoincrement())
+  type        String    
+  value       Float
+  category    String?
+  observation String?
+  date        DateTime   @default(now())
+  // wallet      Wallet?     @relation(fields: [walletId], references: [id])
+  walletId    Int
+}
+
+// Define the model for the wallet
+model Wallet {
+  id      Int        @id @default(autoincrement())
+  balance Float
+}
