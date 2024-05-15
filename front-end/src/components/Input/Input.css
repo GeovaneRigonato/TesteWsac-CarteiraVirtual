@@ -1,0 +1,19 @@
+.input {
+    width: 150px;
+    padding: 10px 0px 0px 0px;
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Torna o texto dentro do input transparente */
+    background-color: transparent; /* Define o fundo do input como transparente */
+    border: none; /* Remove a borda do input */
+text-align: center;
+    border-bottom: 2px solid var(--primary-color); /* Aqui você pode ajustar a cor e a largura da borda */
+    background-repeat: no-repeat; /* Faz com que o ícone não se repita */
+    background-position: right 10px center; /* Posiciona o ícone no canto direito do input */
+    border-radius: 5px; /* Adiciona uma borda arredondada ao input */
+  }
+  .input:focus {
+    outline: none; /* Remove o contorno do input ao focar */
+  }
+  .input::placeholder {
+    color: var(--primary-color); /* Define a cor do placeholder */
+  }
