@@ -1,0 +1,28 @@
+.container-home {
+  background: #191919;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+}
+.content-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin-top: 50px;
+}
+.content-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.link{
+    text-decoration: none;
+    color: #fff;
+}
+
+.link :hover{
+    color: #fff;
+}

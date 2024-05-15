@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import PasswordInput from "../../components/PasswordInput/PasswordInput";
 import "./Login.css";
-
 function Login() {
 
   return (
@@ -11,11 +11,7 @@ function Login() {
       <h2>Olá Geovane</h2>
       <form>
         <div className="input-container">
-          <input
-            type="password"
-            placeholder="Senha"
-            className="input-password"
-          />
+          <PasswordInput />
           <Link to="/home" className="login-button">
             Entrar
           </Link>
