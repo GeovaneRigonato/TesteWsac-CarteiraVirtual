@@ -1,0 +1,54 @@
+:root {
+  --primary-color: #e6e6e6;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-password {
+  width: 300px;
+  padding: 10px 30px 10px 10px;
+  margin-bottom: 20px;
+  color: var(--primary-color); /* Torna o texto dentro do input transparente */
+  background-color: transparent; /* Define o fundo do input como transparente */
+  border: none; /* Remove a borda do input */
+
+  /* Adiciona uma borda na parte inferior do input */
+  border-bottom: 2px solid var(--primary-color); /* Aqui você pode ajustar a cor e a largura da borda */
+  background-image: url("https://i.imgur.com/Tf5nnEG.png"); /* Adiciona um ícone de olho ao input */
+  background-repeat: no-repeat; /* Faz com que o ícone não se repita */
+  background-position: right 10px center; /* Posiciona o ícone no canto direito do input */
+}
+.input-password:focus {
+  outline: none; /* Remove o contorno do input ao focar */
+}
+.input-password::placeholder {
+  color: var(--primary-color); /* Define a cor do placeholder */
+}
+.login-button {
+  width: 300px;
+  padding: 10px;
+  background-color: transparent; /* Define a cor de fundo do botão */
+  border: 2px solid var(--primary-color); /* Remove a borda do botão */
+  color: var(--primary-color); /* Define a cor do texto do botão */
+  font-weight: bold; /* Define o peso da fonte como negrito */
+  cursor: pointer; /* Muda o cursor ao passar o mouse sobre o botão */
+}
+.login-button:hover {
+    border: 2px solid white; /* Define a cor da borda do botão ao passar o mouse */
+  color: white; /* Define a cor do texto do botão ao passar o mouse */
+}
