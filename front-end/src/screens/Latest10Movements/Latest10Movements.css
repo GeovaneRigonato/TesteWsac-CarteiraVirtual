@@ -1,0 +1,19 @@
+body{
+  background: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container-output-graph {
+    background: #191919;
+    width: 100%;
+  }
+  .plotly-graph{
+    margin-top: 100px;
+    height: 100%;
+  }
+  .category-select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
