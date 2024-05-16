@@ -30,7 +30,7 @@ function Payment() {
       <Header title="Pagamento" />
       <form className="container-form">
         <div className="content-form">
-          <label>Valor do pagamento:</label>
+          <label>Valor do Pagamento:</label>
           <Input placeholder="R$ 0,00" value={valor} onChange={handleChange} />
         </div>
         <div className="content-form">
@@ -45,7 +45,7 @@ function Payment() {
               <option value="Lazer">Lazer</option>
               <option value="Outros">Outros</option>
             </select>
-            <NewCategory />
+            <NewCategory title="Criar Nova Categoria" />
           </div>
         </div>
         <div className="content-form">

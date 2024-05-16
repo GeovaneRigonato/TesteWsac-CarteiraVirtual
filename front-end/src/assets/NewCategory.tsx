@@ -1,10 +1,12 @@
 interface NewCategoryProps {
-    className?: string;
-    onClick?: () => void;
+  className?: string;
+  onClick?: () => void;
+  title: string;
 }
 
-function NewCategory(props : NewCategoryProps) {
-    return (
+function NewCategory(props: NewCategoryProps) {
+  return (
+    <div title={props.title}>
       <svg
         onClick={props.onClick}
         width={16}
@@ -22,8 +24,8 @@ function NewCategory(props : NewCategoryProps) {
         <path d="M8 16h18v2H8v-2z" fill="#ffffff" />
         <path d="M16 8h2v18h-2V8z" fill="#ffffff" />
       </svg>
-    )
-  }
-  
-  export default NewCategory
-  
+    </div>
+  );
+}
+
+export default NewCategory;
