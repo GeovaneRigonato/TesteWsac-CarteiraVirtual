@@ -8,6 +8,8 @@
   flex-direction: column;
   color: white;
   font-weight: 500;
+  gap: 20px;
+  
 
 }
 .container-form {
@@ -26,6 +28,7 @@
   padding: 20px;
   gap: 10px;
   font-size: 1.2em;
+  margin-top: 100px;
 }
 
 .input-observation {
