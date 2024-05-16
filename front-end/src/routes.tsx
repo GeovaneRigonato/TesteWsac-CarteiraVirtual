@@ -3,7 +3,7 @@ import Login from "./screens/Login/Login";
 import Home from "./screens/Home/Home";
 import Payment from "./screens/Payment/Payment";
 import Deposit from "./screens/Desposit/Deposit";
-import OutputGraph from "./screens/OutputGraph/OutputGraph";
+import Latest10Movements from "./screens/Latest10Movements/Latest10Movements";
 import InputGraph from "./screens/InputGraph/InputGraph";
 import History from "./screens/History/History";
 
@@ -14,7 +14,7 @@ function MainRoutes() {
             <Route path="/home" element={<Home/>} />
             <Route path="/payment" element={<Payment/>} />
             <Route path="/deposit" element={<Deposit/>} />
-            <Route path="/output-graph" element={<OutputGraph/>} />
+            <Route path="/latest-10-movements" element={<Latest10Movements/>} />
             <Route path="/input-graph" element={<InputGraph/>} />
             <Route path="/history" element={<History/>} />
         </Routes>
