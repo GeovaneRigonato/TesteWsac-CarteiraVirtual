@@ -18,12 +18,11 @@ const Balance = ({ balance }: BalanceProps) => {
     <div className="container-balance">
       <div className="content-balance">
         <p className="balance">Saldo</p>
-        <div className="content">
-          <h3>R$ ‎ </h3>
+        <div className="content-money">
           {showBalance ? (
             <h3>{balance}</h3>
           ) : (
-            <h3>••••••••••</h3> // Ou qualquer outra representação que você queira para ocultar o saldo
+            <h3>R$ ●●●●●●●●●●</h3>
           )}
         </div>
       </div>
