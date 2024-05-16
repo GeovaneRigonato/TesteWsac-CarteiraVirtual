@@ -6,7 +6,8 @@ CREATE TABLE "Movement" (
     "category" TEXT,
     "observation" TEXT,
     "date" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "walletId" INTEGER NOT NULL
+    "walletId" INTEGER NOT NULL,
+    CONSTRAINT "Movement_walletId_fkey" FOREIGN KEY ("walletId") REFERENCES "Wallet" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateTable

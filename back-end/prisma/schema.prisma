@@ -1,26 +1,35 @@
-datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
-}
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
 }
 
+generator prismaClassGenerator {
+  provider = "prisma-class-generator"
+  dryRun   = "false"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
 // Define the model for financial movements
 model Movement {
-  id          Int        @id @default(autoincrement())
-  type        String    
+  id          Int      @id @default(autoincrement())
+  type        String
   value       Float
-  category    String?
+  category    String? //criar uma tabela categoria
   observation String?
-  date        DateTime   @default(now())
-  // wallet      Wallet?     @relation(fields: [walletId], references: [id])
+  date        DateTime @default(now())
+  wallet      Wallet   @relation(fields: [walletId], references: [id])
   walletId    Int
 }
 
 // Define the model for the wallet
 model Wallet {
-  id      Int        @id @default(autoincrement())
-  balance Float
+  id        Int        @id @default(autoincrement())
+  balance   Float
+  movements Movement[]
 }
