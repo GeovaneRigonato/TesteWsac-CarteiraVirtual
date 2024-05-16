@@ -1,35 +1,40 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { Controller, Get, Post, Body, Patch, Param, Delete, Inject } from '@nestjs/common';
-import { CreateWalletUseCase } from './use-cases/createWallet.useCase';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+
+import { Prisma } from '@prisma/client';
+import { WalletsService } from './wallets.service';
 
 @Controller('wallets')
 export class WalletsController {
+  constructor(private readonly walletsService: WalletsService) {}
 
-  @Inject(CreateWalletUseCase)
-  private readonly createWalletUseCase: CreateWalletUseCase;
-  
   @Post()
-  create(@Body() balance: number) {
-    return this.createWalletUseCase.execute(balance);
+  async create(@Body() data: Prisma.WalletCreateInput) {
+    return this.walletsService.create(data);
   }
 
-  // @Get()
-  // findAll() {
-  //   return this.walletsService.findAll();
-  // }
+  //buscar saldo da carteira pelo id
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    return this.walletsService.findOne(id);
+  }
 
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.walletsService.findOne(+id);
-  // }
+  //buscar as ultimas 10 movimentações da carteira pelo id
+  @Get(':id/movements')
+  async findMovements(@Param('id') id: string) {
+    return this.walletsService.findMovements(id);
+  }
 
-  // @Patch(':id')
-  // update(@Param('id') id: string, @Body() updateWalletDto: UpdateWalletDto) {
-  //   return this.walletsService.update(+id, updateWalletDto);
-  // }
-
-  // @Delete(':id')
-  // remove(@Param('id') id: string) {
-  //   return this.walletsService.remove(+id);
-  // }
+  //buscar todas as movimentações da carteira pelo id
+  @Get(':id/movements/all')
+  async findAllMovements(@Param('id') id: string) {
+    return this.walletsService.findAllMovements(id);
+  }
 }

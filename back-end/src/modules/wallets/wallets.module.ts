@@ -1,13 +1,10 @@
 import { Module } from '@nestjs/common';
+import { WalletsService } from './wallets.service';
 import { WalletsController } from './wallets.controller';
-import { PrismaModule } from 'src/prisma/prisma.module';
-import { WalletPrisma } from './prisma-config/walletPrisma';
-import { CreateWalletUseCase } from './use-cases/createWallet.useCase';
-
+import { PrismaService } from 'src/database/prisma.service';
 
 @Module({
-  imports: [PrismaModule],
   controllers: [WalletsController],
-  providers: [WalletPrisma, { provide: 'WalletPersistence', useClass: WalletPrisma},CreateWalletUseCase],
+  providers: [WalletsService, PrismaService],
 })
 export class WalletsModule {}
