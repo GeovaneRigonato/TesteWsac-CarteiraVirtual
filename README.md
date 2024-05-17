@@ -3,7 +3,9 @@
 ## Descrição
 
 Este projeto é uma aplicação de pagamento que utiliza React no frontend e NestJS com Prisma no backend. A aplicação permite aos usuários realizar pagamentos,depósitos, visualizar histórico de movimentações, gerar gráficos, selecionar categorias, e adicionar observações.
-
+![Tela Inicial](https://raw.githubusercontent.com/GeovaneRigonato/TesteWsac-CarteiraVirtual/main/front-end/public/telaIncial.png)
+![Tela 2](https://raw.githubusercontent.com/GeovaneRigonato/TesteWsac-CarteiraVirtual/main/front-end/public/Tela2.png)
+![Tela 3](https://raw.githubusercontent.com/GeovaneRigonato/TesteWsac-CarteiraVirtual/main/front-end/public/Tela3.png)
 ## Tecnologias Utilizadas
 
 ### Frontend
