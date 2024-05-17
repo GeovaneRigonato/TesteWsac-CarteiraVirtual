@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import Circle from "../../assets/Circle";
 
@@ -6,11 +7,15 @@ interface HeaderProps {
   description?: string;
 }
 
-function Header( { title, description }: HeaderProps) {
+function Header({ title, description }: HeaderProps) {
+  const navigate = useNavigate();
+
   return (
     <div className="container-header">
-      <div className="content-image">
-        <img width={20} src="/Search.png" alt="" />
+      <div className="content-back">
+        <button className="button-header" onClick={() => navigate("/home")}>
+          Voltar
+        </button>
       </div>
 
       <div className="container-circle">

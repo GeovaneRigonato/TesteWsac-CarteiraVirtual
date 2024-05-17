@@ -1,4 +1,3 @@
-import PaymentIcon from "../../../assets/Payment";
 import "./Transaction.css";
 
 interface TransactionProps {

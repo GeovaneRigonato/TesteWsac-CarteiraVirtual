@@ -27,7 +27,6 @@ const Balance = ({ balance }: BalanceProps) => {
         </div>
       </div>
       <div className="balance-toggle-icon" onClick={toggleBalanceVisibility}>
-        {/* Ícone de olho */}
         {showBalance ? <OpenEyeIcon /> : <CloseEyeIcon />}
       </div>
     </div>

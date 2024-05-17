@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Plot from "react-plotly.js";
-import "./Latest10Movements.css";
+import "./AllMovements.css";
 import Header from "../../components/Header/Header";
 
-function Latest10Movements() {
+function AllMovements() {
   const [movements, setMovements] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedType, setSelectedType] = useState("");
@@ -13,18 +13,17 @@ function Latest10Movements() {
     async function fetchMovements() {
       try {
         const response = await fetch(
-          "http://localhost:3000/wallets/1/movements"
+          "http://localhost:3000/wallets/1/movements/all"
         );
         const data = await response.json();
         setMovements(data);
-      } catch (error) {
+      } catch (error) {     
         console.error("Erro ao buscar os movimentos:", error);
       }
     }
 
     fetchMovements();
   }, []);
-
   useEffect(() => {
     let filtered: { category: string, type: string }[] = movements;
 
@@ -50,14 +49,14 @@ function Latest10Movements() {
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
-
+  
   const handleTypeChange = (event) => {
     setSelectedType(event.target.value);
   };
 
   return (
     <div className="container-output-graph">
-      <Header title="Últimas 10 movimentações" />
+      <Header title="Todas as movimentações" />
       <Plot
         className="plotly-graph"
         data={[
@@ -98,4 +97,4 @@ function Latest10Movements() {
   );
 }
 
-export default Latest10Movements;
+export default AllMovements;

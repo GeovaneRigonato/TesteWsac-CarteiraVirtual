@@ -1,0 +1,35 @@
+body {
+  background: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container-output-graph {
+  background: #191919;
+  width: 100%;
+}
+.plotly-graph {
+  margin-top: 100px;
+  height: 100%;
+}
+.category-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-header {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  color: white;
+}
+.content-back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, var(--background-primary), var(--background-secondary));
+  border-radius: 10px;
+}

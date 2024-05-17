@@ -13,19 +13,13 @@ function Deposit() {
   const history = useNavigate();
 
   const handleChange = (event) => {
-    // Obtenha o valor do input
     const inputValor = event.target.value;
-
-    // Verifique se o valor é numérico
     const numericValue = parseFloat(inputValor.replace(/[^\d]/g, ""));
-
-    // Formate o valor como moeda (R$)
     const formattedValor = new Intl.NumberFormat("pt-BR", {
       style: "currency",
       currency: "BRL",
-    }).format(numericValue / 100); // Divida por 100 para considerar os centavos
+    }).format(numericValue / 100);
 
-    // Atualize o estado do valor formatado
     setValor(formattedValor);
   };
 
@@ -33,7 +27,6 @@ function Deposit() {
     event.preventDefault();
 
     try {
-      // Crie o objeto de dados para enviar na solicitação POST
       const data = {
         value: parseFloat(valor.replace(/[^\d,]/g, "").replace(",", ".")),
         category,
@@ -41,7 +34,6 @@ function Deposit() {
         walletId: 1,
       };
 
-      // Envie a solicitação POST
       const response = await fetch("http://localhost:3000/movements/deposit/1", {
         method: "POST",
         headers: {
@@ -50,10 +42,8 @@ function Deposit() {
         body: JSON.stringify(data),
       });
 
-      // Verifique se a solicitação foi bem-sucedida
       if (response.ok) {
         console.log("Depósito realizado com sucesso!");
-        // Redirecione para a página inicial após o depósito
         history("/home");
       } else {
         console.error("Erro ao realizar o depósito:", response.statusText);

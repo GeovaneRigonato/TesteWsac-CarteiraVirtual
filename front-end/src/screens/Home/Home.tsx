@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import DepositIcon from '../../assets/Deposit';
-import InputGraphIcon from '../../assets/InputGraph';
 import OutputGraphIcon from '../../assets/OutputGraph';
 import PayIcon from '../../assets/Pay';
 import HistoryIcon from '../../assets/History';
@@ -19,7 +18,6 @@ function Home() {
         const walletId=1;
         const response = await fetch(`http://localhost:3000/wallets/${walletId}`);
         const data = await response.json();
-        // Supondo que o saldo esteja no formato { balance: "1000.98" }
         const formattedBalance = parseFloat(data.balance).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
         setBalance(formattedBalance);
       } catch (error) {
@@ -44,6 +42,9 @@ function Home() {
           </Link>
           <Link className="link" to="/latest-10-movements">
             <OptionsButton icon={<OutputGraphIcon />} text="Gráficos" />
+          </Link>
+          <Link className="link" to="/all-movements">
+            <OptionsButton icon={<OutputGraphIcon />} text="Gráfico Geral" />
           </Link>
           <Link className="link" to="/history">
             <OptionsButton icon={<HistoryIcon />} text="Histórico" />

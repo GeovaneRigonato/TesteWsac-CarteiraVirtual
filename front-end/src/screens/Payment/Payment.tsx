@@ -23,9 +23,7 @@ function Payment() {
     const formattedValor = new Intl.NumberFormat("pt-BR", {
       style: "currency",
       currency: "BRL",
-    }).format(numericValue / 100); // Divida por 100 para considerar os centavos
-
-    // Atualize o estado do valor formatado
+    }).format(numericValue / 100);
     setValor(formattedValor);
   };
 
@@ -33,16 +31,14 @@ function Payment() {
     event.preventDefault();
 
     try {
-      // Crie o objeto de dados para enviar na solicitação POST
       const data = {
         value: parseFloat(valor.replace(/[^\d,]/g, "").replace(",", ".")),
         category,
         observation,
-        walletId: 1, // Substitua pelo ID da carteira correto
+        walletId: 1,
       };
 
-      // Envie a solicitação POST
-      const response = await fetch(`http://localhost:3000/movements/payment/${data.walletId}`, {
+      const response = await fetch(`http://localhost:3000/movements/payment/1`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,10 +46,8 @@ function Payment() {
         body: JSON.stringify(data),
       });
 
-      // Verifique se a solicitação foi bem-sucedida
       if (response.ok) {
         console.log("Pagamento realizado com sucesso!");
-        // Redirecione para a página inicial após o pagamento ser realizado
         navigate("/home");
       } else {
         console.error("Erro ao realizar o pagamento:", response.statusText);

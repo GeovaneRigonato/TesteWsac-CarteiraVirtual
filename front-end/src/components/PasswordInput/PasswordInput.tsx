@@ -20,7 +20,6 @@ const PasswordInput = () => {
         className={`password-toggle-icon ${showPassword ? "visible" : ""}`}
         onClick={togglePasswordVisibility}
       >
-        {/* Ícone de olho */}
         {showPassword ? <OpenEyeIcon/> : <CloseEyeIcon/>}
       </div>
     </div>

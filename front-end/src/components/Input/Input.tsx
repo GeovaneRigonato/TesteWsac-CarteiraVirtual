@@ -11,8 +11,8 @@ function Input(props : InputProps) {
             type="text"
             placeholder={props.placeholder || ''}
             className="input"
-            value={props.value} // Propriedade value para definir o valor do input
-            onChange={props.onChange} // Propriedade onChange para lidar com mudanças no input
+            value={props.value}
+            onChange={props.onChange}
         />
     );
 }

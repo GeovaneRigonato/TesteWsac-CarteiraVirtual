@@ -1,5 +1,4 @@
 import { Wallet } from './wallet';
-import { Category } from './category';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class Movement {
@@ -13,6 +12,9 @@ export class Movement {
   value: number;
 
   @ApiPropertyOptional({ type: String })
+  category?: string;
+
+  @ApiPropertyOptional({ type: String })
   observation?: string;
 
   @ApiProperty({ type: Date })
@@ -23,10 +25,4 @@ export class Movement {
 
   @ApiProperty({ type: Number })
   walletId: number;
-
-  @ApiProperty({ type: () => Category })
-  category: Category;
-
-  @ApiProperty({ type: Number })
-  categoryId: number;
 }
